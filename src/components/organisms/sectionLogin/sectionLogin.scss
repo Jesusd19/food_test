@@ -1,0 +1,23 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.o-sectionLogin {
+  text-align: center;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  &__content {
+    width: 80%;
+    &__subtitle {
+      color: $dim-gray;
+    }
+
+    &__forgot {
+      font-weight: 800;
+      font-size: 18px;
+      &:hover {
+          cursor: pointer;
+      }
+    }
+  }
+}

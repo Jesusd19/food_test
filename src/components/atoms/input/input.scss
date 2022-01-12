@@ -1,0 +1,29 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+
+.logo {
+    width: 35%;
+}
+
+.a-input-group {
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+
+  &__input {
+    width: 100%;
+    padding: 20px 10px;
+    border: 2px solid rgba($color: $nobel, $alpha: 0.3);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .icon {
+    position: absolute;
+    width: 30px;
+    top: 15px;
+    right: 20px;
+    pointer-events: none;
+  }
+}
