@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import Layout from "../components/organisms/layout/layout";
+import Store from "../components/organisms/store/store";
 const ListProduct = () => {
-    return (
-        <div>
-            Tiendas
-        </div>
-    )
-}
+  return (
+    <Layout>
+      <Store />
+    </Layout>
+  );
+};
 
-export default ListProduct
+export default ListProduct;

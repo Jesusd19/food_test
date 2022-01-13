@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.o-store {
+  text-align: center;
+  @include from($large) {
+    text-align: initial;
+    padding: 0 5%;
+  }
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include from($large) {
+      justify-content: left;
+    }
+  }
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid $golden-tainoi;
+  outline: none;
+  padding: 0.5em;
+}

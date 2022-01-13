@@ -7,11 +7,23 @@ import { Link } from "react-router-dom";
 import Button from "../../atoms/button/button";
 import Logo from "../../../assets/image/Login-Best-Pizza.png";
 
+import useLogin from "../../../hooks/useLogin";
+
 const SectionLogin = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [empty, setempty] = useState(false);
+  const { login } = useLogin();
 
-  const login = () => {};
+  const handleLogin = () => {
+    if (user && password) {
+      setempty(false);
+      login(user, password);
+    } else {
+      setempty(true);
+    }
+  };
+
   return (
     <div className="o-sectionLogin">
       <div className="o-sectionLogin__content">
@@ -20,13 +32,20 @@ const SectionLogin = () => {
         </Link>
         <h1 className="">Bienvenido</h1>
         <h2 className="o-sectionLogin__content__subtitle">
-          A las mejores pizzas del paíz
+          A las mejores pizzas del país
         </h2>
-        <Input icon="user" name="Usuario" value={user} change={setUser} />
+        <Input
+          icon="user"
+          name="Usuario"
+          value={user}
+          change={setUser}
+          type={"text"}
+        />
         <Input
           icon="password"
           name="Contraseña"
           value={password}
+          type="password"
           change={setPassword}
         />
         <p
@@ -37,7 +56,8 @@ const SectionLogin = () => {
         >
           ¿Olvidaste tu contraseña?
         </p>
-        <Button actionClick={login} name={"Iniciar sesión"} />
+        <Button actionClick={handleLogin} name={"Iniciar sesión"} />
+        {empty && <p>Faltan datos por llenar</p>}
       </div>
     </div>
   );

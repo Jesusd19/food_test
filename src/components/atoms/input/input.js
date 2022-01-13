@@ -8,7 +8,7 @@ const Input = (props) => {
   return (
     <div className="a-input-group">
       <input
-        type={"text"}
+        type={props.type}
         placeholder={props.name}
         defaultValue={props.value}
         className="a-input-group__input"
